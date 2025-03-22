@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="009688">
+    <title>CN Values Quiz</title>
+    <link rel="icon" href="img/favicon.png">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!--js-->
+    <script src="https://testingcf.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="https://testingcf.jsdelivr.net/npm/materialize-css@1.0.0/dist/js/materialize.min.js"></script>
+    <script src="https://testingcf.jsdelivr.net/npm/mdui@1.0.0/dist/js/mdui.min.js"></script>
+
+    <!--css-->
+    <link rel="stylesheet" href="https://testingcf.jsdelivr.net/npm/materialize-css@1.0.0/dist/css/materialize.min.css">
+    <link rel="stylesheet" href="https://testingcf.jsdelivr.net/npm/material-design-icons@3.0.1/iconfont/material-icons.min.css">
+    <link rel="stylesheet" href="https://testingcf.jsdelivr.net/npm/mdui@1.0.0/dist/css/mdui.min.css">
+
+    <!-- local js css -->
+    <script src="info/questions.js"></script>
+    <script src="info/specials.js"></script>
+    <script src="js/quiz.js"></script>
+    <script src="js/version.js"></script>
+    <link rel="stylesheet" href="css/quiz.css">
+</head>
+
+
+<body>
+
+<nav class="teal">
+    <div class="nav-wrapper container">
+        <a id="logo-container" href="index.html" class="brand-logo left">CN Values</a>
+        <ul class="right">
+            <li id="version" style="padding-right: 1rem"></li>
+            <li><a href="https://github.com/CNValues/cnvalues.github.io" target="_blank"
+                   class="mdui-btn mdui-btn-icon waves-effect tooltipped" data-tooltip="Github Repository">
+                <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 36 36"
+                     enable-background="new 0 0 36 36" xml:space="preserve" class="mdui-icon"
+                     style="width: 24px;height:24px;">
+        <path fill-rule="evenodd" clip-rule="evenodd" fill="#ffffff" d="M18,1.4C9,1.4,1.7,8.7,1.7,17.7c0,7.2,4.7,13.3,11.1,15.5
+	c0.8,0.1,1.1-0.4,1.1-0.8c0-0.4,0-1.4,0-2.8c-4.5,1-5.5-2.2-5.5-2.2c-0.7-1.9-1.8-2.4-1.8-2.4c-1.5-1,0.1-1,0.1-1
+	c1.6,0.1,2.5,1.7,2.5,1.7c1.5,2.5,3.8,1.8,4.7,1.4c0.1-1.1,0.6-1.8,1-2.2c-3.6-0.4-7.4-1.8-7.4-8.1c0-1.8,0.6-3.2,1.7-4.4
+	c-0.2-0.4-0.7-2.1,0.2-4.3c0,0,1.4-0.4,4.5,1.7c1.3-0.4,2.7-0.5,4.1-0.5c1.4,0,2.8,0.2,4.1,0.5c3.1-2.1,4.5-1.7,4.5-1.7
+	c0.9,2.2,0.3,3.9,0.2,4.3c1,1.1,1.7,2.6,1.7,4.4c0,6.3-3.8,7.6-7.4,8c0.6,0.5,1.1,1.5,1.1,3c0,2.2,0,3.9,0,4.5
+	c0,0.4,0.3,0.9,1.1,0.8c6.5-2.2,11.1-8.3,11.1-15.5C34.3,8.7,27,1.4,18,1.4z"></path>
+      </svg>
+            </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<main class="container row equal-height-row">
+    <div class="col xl8 l8 m8 s12 equal-height-col" style="min-height: 13rem">
+        <div class="card grey lighten-3 hoverable equal-height-inner">
+            <div class="card-content">
+                <div id="question-number" class="card-title center header"></div>
+                <div id="question-text" class="center flow-text"></div>
+            </div>
+        </div>
+
+    </div>
+    <div class="col xl4 l4 m4 s12 equal-height-col">
+        <div class="equal-height-inner">
+            <div class="row">
+                <button id="btn-strongly-positive"
+                        class="btn-large green waves-effect col xl10 l10 m10 s10 offset-xl1 offset-l1 offset-m1 offset-s1">
+                    强烈同意
+                </button>
+            </div>
+            <div class="row">
+                <button id="btn-positive"
+                        class="btn-large green lighten-3 waves-effect col xl10 l10 m10 s10 offset-xl1 offset-l1 offset-m1 offset-s1">
+                    同意
+                </button>
+            </div>
+            <div class="row">
+                <button id="btn-uncertain"
+                        class="btn-large grey waves-effect col xl10 l10 m10 s10 offset-xl1 offset-l1 offset-m1 offset-s1">
+                    中立/不确定
+                </button>
+            </div>
+            <div class="row">
+                <button id="btn-negative"
+                        class="btn-large red lighten-3 waves-effect col xl10 l10 m10 s10 offset-xl1 offset-l1 offset-m1 offset-s1">
+                    反对
+                </button>
+            </div>
+            <div class="row">
+                <button id="btn-strongly-negative"
+                        class="btn-large red waves-effect col xl10 l10 m10 s10 offset-xl1 offset-l1 offset-m1 offset-s1">
+                    强烈反对
+                </button>
+            </div>
+            <div class="row">
+                <button id="btn-prev"
+                        class="btn-large blue waves-effect col xl10 l10 m10 s10 offset-xl1 offset-l1 offset-m1 offset-s1">
+                    前一题
+                </button>
+            </div>
+        </div>
+    </div>
+</main>
+
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="009688">
+    <title>CN Values</title>
+    <link rel="icon" href="img/favicon.png">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!--js-->
+    <script src="https://testingcf.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="https://testingcf.jsdelivr.net/npm/materialize-css@1.0.0/dist/js/materialize.min.js"></script>
+    <script src="https://testingcf.jsdelivr.net/npm/mdui@1.0.0/dist/js/mdui.min.js"></script>
+
+    <!--css-->
+    <link rel="stylesheet" href="https://testingcf.jsdelivr.net/npm/materialize-css@1.0.0/dist/css/materialize.min.css">
+    <link rel="stylesheet" href="https://testingcf.jsdelivr.net/npm/material-design-icons@3.0.1/iconfont/material-icons.min.css">
+    <link rel="stylesheet" href="https://testingcf.jsdelivr.net/npm/mdui@1.0.0/dist/css/mdui.min.css">
+
+    <!-- local js css -->
+    <script src="js/index.js"></script>
+    <script src="js/version.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+
+<nav class="teal">
+    <div class="nav-wrapper container">
+        <a id="logo-container" href="index.html" class="brand-logo left">CN Values</a>
+        <ul class="right">
+            <li id="version" style="padding-right: 1rem"></li>
+            <li><a href="https://github.com/CNValues/cnvalues.github.io" target="_blank"
+                   class="mdui-btn mdui-btn-icon waves-effect tooltipped" data-tooltip="Github Repository">
+                <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 36 36"
+                     enable-background="new 0 0 36 36" xml:space="preserve" class="mdui-icon"
+                     style="width: 24px;height:24px;">
+        <path fill-rule="evenodd" clip-rule="evenodd" fill="#ffffff" d="M18,1.4C9,1.4,1.7,8.7,1.7,17.7c0,7.2,4.7,13.3,11.1,15.5
+	c0.8,0.1,1.1-0.4,1.1-0.8c0-0.4,0-1.4,0-2.8c-4.5,1-5.5-2.2-5.5-2.2c-0.7-1.9-1.8-2.4-1.8-2.4c-1.5-1,0.1-1,0.1-1
+	c1.6,0.1,2.5,1.7,2.5,1.7c1.5,2.5,3.8,1.8,4.7,1.4c0.1-1.1,0.6-1.8,1-2.2c-3.6-0.4-7.4-1.8-7.4-8.1c0-1.8,0.6-3.2,1.7-4.4
+	c-0.2-0.4-0.7-2.1,0.2-4.3c0,0,1.4-0.4,4.5,1.7c1.3-0.4,2.7-0.5,4.1-0.5c1.4,0,2.8,0.2,4.1,0.5c3.1-2.1,4.5-1.7,4.5-1.7
+	c0.9,2.2,0.3,3.9,0.2,4.3c1,1.1,1.7,2.6,1.7,4.4c0,6.3-3.8,7.6-7.4,8c0.6,0.5,1.1,1.5,1.1,3c0,2.2,0,3.9,0,4.5
+	c0,0.4,0.3,0.9,1.1,0.8c6.5-2.2,11.1-8.3,11.1-15.5C34.3,8.7,27,1.4,18,1.4z"></path>
+      </svg>
+            </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<main class="container">
+    <div class="center"><img src="img/favicon.png" alt="favicon" width="200" height="200"></div>
+    <h1 class="header center orange-text" style="font-size: 4em">CN Values</h1>
+    <h5 class="header center light">CN Values 是基于 8values 源代码开发制作的娱乐性政治立场测试。为了使测试更贴近国人，在参考数个其他测试后，以中国当下语境为背景重新编制了测试题。</h5>
+
+    <div id="start-modal" class="modal">
+        <div class="modal-content">
+            <h4>测试说明</h4>
+            你将会看到一系列观点，请点击按钮选择你对于每个观点的看法。<br><br>
+            <strong>提示：</strong>本测试的意图在于评估你的政治观念，即政治的“应然”而非“实然”，请忽略部分题目在当下的可行性。若对题目摇摆不定，请跟着第一感觉走；若对某道题难以理解，可试着思考题目观点的对立面。<br><br>
+            <strong>声明：为了保证本测试的区分度，<span
+                    style="color: #FF0000; ">可能会出现高度偏激或有冒犯性的内容</span>，题目观点并不代表制作者的观点。</strong><br><br>
+            <strong>隐私声明：</strong>本测试完全由前端实现，代码全部开源，我们不会收集你的任何个人信息。
+        </div>
+        <div class="modal-footer">
+            <a href="quiz.html" class="btn-flat waves-effect waves-teal">开始</a>
+            <a class="btn-flat modal-close waves-effect waves-teal">取消</a>
+        </div>
+    </div>
+
+    <br><br><br>
+    <div class="row center">
+        <a href="#start-modal" class="btn-large waves-effect modal-trigger">点击开始</a>
+    </div>
+    <div class="row center">
+        <p style="color: red; font-size: 1.5em; font-weight: bold;">注意：本项目已停止维护并存档</p>
+    </div>
+</main>
+
+<footer class="page-footer teal">
+    <div class="container">
+        <h6>本测试受以下测试启发完成：</h6>
+        <ul>
+            <li>
+                <a href="https://8values.github.io/" class="white-text">8values</a>
+            </li>
+            <li>
+                <a href="https://leftvalues.github.io/" class="white-text">LeftValues</a>
+            </li>
+            <li>
+                <a href="https://rightvaluestest.github.io/" class="white-text">RightValues</a>
+            </li>
+            <li>
+                <a href="https://www.politiscales.net/" class="white-text">PolitiScales</a>
+            </li>
+            <li>
+                <a href="https://politicalcompass.org/" class="white-text">The Political Compass</a>
+            </li>
+            <li>
+                <a href="https://zuobiao.me/" class="white-text">北大未名版中国政治坐标系测试</a>
+            </li>
+            <li>
+                <a href="https://yavt.fengtao.xyz/" class="white-text">Yet Another Values Test</a>
+            </li>
+        </ul>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            Made by CN Values Team <br>
+            感谢 YAVT 制作者对本测试的协助
+        </div>
+    </div>
+</footer>
+
+</body>
+
+</html>

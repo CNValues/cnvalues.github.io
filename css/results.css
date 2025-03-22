@@ -1,0 +1,35 @@
+main {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.equal-height-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.equal-height-col {
+    display: flex;
+}
+
+.equal-height-inner {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+img {
+    width: 75%;
+}
+
+.progress {
+    height: 2rem;
+}
+
+#special-row div {
+    margin: 0 0 1rem;
+}
+
+#special-row img {
+    width: 50%;
+}

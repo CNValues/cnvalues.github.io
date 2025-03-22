@@ -1,0 +1,19 @@
+main {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.equal-height-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.equal-height-col {
+    display: flex;
+}
+
+.equal-height-inner {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}

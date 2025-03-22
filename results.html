@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="009688">
+    <title>CN Values result</title>
+    <link rel="icon" href="img/favicon.png">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!--js-->
+    <script src="https://testingcf.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="https://testingcf.jsdelivr.net/npm/materialize-css@1.0.0/dist/js/materialize.min.js"></script>
+    <script src="https://testingcf.jsdelivr.net/npm/mdui@1.0.0/dist/js/mdui.min.js"></script>
+
+    <!--css-->
+    <link rel="stylesheet" href="https://testingcf.jsdelivr.net/npm/materialize-css@1.0.0/dist/css/materialize.min.css">
+    <link rel="stylesheet" href="https://testingcf.jsdelivr.net/npm/material-design-icons@3.0.1/iconfont/material-icons.min.css">
+    <link rel="stylesheet" href="https://testingcf.jsdelivr.net/npm/mdui@1.0.0/dist/css/mdui.min.css">
+
+    <!-- local js css -->
+    <script src="info/ideologies.js"></script>
+    <script src="info/specials.js"></script>
+    <script src="js/results.js"></script>
+    <script src="js/version.js"></script>
+    <link rel="stylesheet" href="css/results.css">
+</head>
+
+<body>
+
+
+<nav class="teal">
+    <div class="nav-wrapper container">
+        <a id="logo-container" href="index.html" class="brand-logo left">CN Values</a>
+        <ul class="right">
+            <li id="version" style="padding-right: 1rem"></li>
+            <li><a href="https://github.com/CNValues/cnvalues.github.io" target="_blank"
+                   class="mdui-btn mdui-btn-icon waves-effect tooltipped" data-tooltip="Github Repository">
+                <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 36 36"
+                     enable-background="new 0 0 36 36" xml:space="preserve" class="mdui-icon"
+                     style="width: 24px;height:24px;">
+        <path fill-rule="evenodd" clip-rule="evenodd" fill="#ffffff" d="M18,1.4C9,1.4,1.7,8.7,1.7,17.7c0,7.2,4.7,13.3,11.1,15.5
+	c0.8,0.1,1.1-0.4,1.1-0.8c0-0.4,0-1.4,0-2.8c-4.5,1-5.5-2.2-5.5-2.2c-0.7-1.9-1.8-2.4-1.8-2.4c-1.5-1,0.1-1,0.1-1
+	c1.6,0.1,2.5,1.7,2.5,1.7c1.5,2.5,3.8,1.8,4.7,1.4c0.1-1.1,0.6-1.8,1-2.2c-3.6-0.4-7.4-1.8-7.4-8.1c0-1.8,0.6-3.2,1.7-4.4
+	c-0.2-0.4-0.7-2.1,0.2-4.3c0,0,1.4-0.4,4.5,1.7c1.3-0.4,2.7-0.5,4.1-0.5c1.4,0,2.8,0.2,4.1,0.5c3.1-2.1,4.5-1.7,4.5-1.7
+	c0.9,2.2,0.3,3.9,0.2,4.3c1,1.1,1.7,2.6,1.7,4.4c0,6.3-3.8,7.6-7.4,8c0.6,0.5,1.1,1.5,1.1,3c0,2.2,0,3.9,0,4.5
+	c0,0.4,0.3,0.9,1.1,0.8c6.5-2.2,11.1-8.3,11.1-15.5C34.3,8.7,27,1.4,18,1.4z"></path>
+      </svg>
+            </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<main class="container row equal-height-row">
+    <div class="col xl6 l6 m12 s12 equal-height-col">
+        <div class="card hoverable equal-height-inner">
+            <div class="card-content">
+                <div class="center card-title">CN Values 测试结果</div>
+                <div class="collection-item row center">
+                    <div class="col xl2 l2 m2 s2 no-padding">
+                        <img src="https://cdn.jsdelivr.net/gh/CNValues/cnvalues.github.io/img/equality.png" alt="平等">
+                        <br><span>平等</span>
+                    </div>
+                    <div class="col xl8 l8 m8 s8">
+                        <span id="percent-equality" class="left">50%</span>
+                        <span class="center">经济：<span id="label-econ"></span></span>
+                        <span id="percent-market" class="right">50%</span>
+                        <br>
+                        <div class="progress yellow">
+                            <div id="bar-equality" class="determinate red" style="width: 50%"></div>
+                        </div>
+                    </div>
+                    <div class="col xl2 l2 m2 s2 no-padding">
+                        <img src="https://cdn.jsdelivr.net/gh/CNValues/cnvalues.github.io/img/market.png" alt="市场">
+                        <br><span>市场</span>
+                    </div>
+                </div>
+                <div class="collection-item row center">
+                    <div class="col xl2 l2 m2 s2 no-padding">
+                        <img src="https://cdn.jsdelivr.net/gh/CNValues/cnvalues.github.io/img/liberty.png" alt="自由">
+                        <br><span>自由</span>
+                    </div>
+                    <div class="col xl8 l8 m8 s8">
+                        <span id="percent-liberty" class="left">50%</span>
+                        <span class="center">政治：<span id="label-govt"></span></span>
+                        <span id="percent-authority" class="right">50%</span>
+                        <br>
+                        <div class="progress brown">
+                            <div id="bar-liberty" class="determinate blue" style="width: 50%"></div>
+                        </div>
+                    </div>
+                    <div class="col xl2 l2 m2 s2 no-padding">
+                        <img src="https://cdn.jsdelivr.net/gh/CNValues/cnvalues.github.io/img/authority.png" alt="权威">
+                        <br><span>权威</span>
+                    </div>
+                </div>
+                <div class="collection-item row center">
+                    <div class="col xl2 l2 m2 s2 no-padding">
+                        <img src="https://cdn.jsdelivr.net/gh/CNValues/cnvalues.github.io/img/progress.png" alt="进步">
+                        <br><span>进步</span>
+                    </div>
+                    <div class="col xl8 l8 m8 s8">
+                        <span id="percent-progress" class="left">50%</span>
+                        <span class="center">社会：<span id="label-scty" class="center"></span></span>
+                        <span id="percent-tradition" class="right">50%</span>
+                        <br>
+                        <div class="progress cyan">
+                            <div id="bar-progress" class="determinate purple" style="width: 50%"></div>
+                        </div>
+                    </div>
+                    <div class="col xl2 l2 m2 s2 no-padding">
+                        <img src="https://cdn.jsdelivr.net/gh/CNValues/cnvalues.github.io/img/tradition.png" alt="传统">
+                        <br><span>传统</span>
+                    </div>
+                </div>
+                <div class="collection-item row center">
+                    <div class="col xl2 l2 m2 s2 no-padding">
+                        <img src="https://cdn.jsdelivr.net/gh/CNValues/cnvalues.github.io/img/ecology.png" alt="生态">
+                        <br><span>生态</span>
+                    </div>
+                    <div class="col xl8 l8 m8 s8">
+                        <span id="percent-ecology" class="left">50%</span>
+                        <span class="center">环境：<span id="label-envo" class="center"></span></span>
+                        <span id="percent-production" class="right">50%</span>
+                        <br>
+                        <div class="progress grey">
+                            <div id="bar-ecology" class="determinate green" style="width: 50%"></div>
+                        </div>
+                    </div>
+                    <div class="col xl2 l2 m2 s2 no-padding">
+                        <img src="https://cdn.jsdelivr.net/gh/CNValues/cnvalues.github.io/img/production.png" alt="生产">
+                        <br><span>生产</span>
+                    </div>
+                </div>
+                <div id="special-row" class="collection-item row center"
+                     style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center">
+                    <div id="ruguan-show" class="col xl2 l2 m2 s2 no-padding hide">
+                        <img src="https://cdn.jsdelivr.net/gh/CNValues/cnvalues.github.io/img/ruguan.png" alt="入关学">
+                        <br><span>入关学</span>
+                    </div>
+                    <div id="yinmou-show" class="col xl2 l2 m2 s2 no-padding hide">
+                        <img src="https://cdn.jsdelivr.net/gh/CNValues/cnvalues.github.io/img/yinmou.png" alt="阴谋论">
+                        <br><span>阴谋论</span>
+                    </div>
+                    <div id="onegod-show" class="col xl2 l2 m2 s2 no-padding hide">
+                        <img src="https://cdn.jsdelivr.net/gh/CNValues/cnvalues.github.io/img/onegod.png" alt="一神论">
+                        <br><span>一神论</span>
+                    </div>
+                    <div id="rujia-show" class="col xl2 l2 m2 s2 no-padding hide">
+                        <img src="https://cdn.jsdelivr.net/gh/CNValues/cnvalues.github.io/img/rujia.png" alt="儒家">
+                        <br><span>儒家</span>
+                    </div>
+                    <div id="gongye-show" class="col xl2 l2 m2 s2 no-padding hide">
+                        <img src="https://cdn.jsdelivr.net/gh/CNValues/cnvalues.github.io/img/gongye.png" alt="工业党">
+                        <br><span>工业党</span>
+                    </div>
+                    <div id="mao-show" class="col xl2 l2 m2 s2 no-padding hide">
+                        <img src="https://cdn.jsdelivr.net/gh/CNValues/cnvalues.github.io/img/mao.png" alt="毛粉">
+                        <br><span>毛粉</span>
+                    </div>
+                    <div id="han-show" class="col xl2 l2 m2 s2 no-padding hide">
+                        <img src="https://cdn.jsdelivr.net/gh/CNValues/cnvalues.github.io/img/han.png" alt="皇汉">
+                        <br><span>皇汉</span>
+                    </div>
+                    <div id="jieti-show" class="col xl2 l2 m2 s2 no-padding hide">
+                        <img src="https://cdn.jsdelivr.net/gh/CNValues/cnvalues.github.io/img/jieti.png" alt="解体论">
+                        <br><span>解体论</span>
+                    </div>
+                    <div id="minguo-show" class="col xl2 l2 m2 s2 no-padding hide">
+                        <img src="https://cdn.jsdelivr.net/gh/CNValues/cnvalues.github.io/img/guofen.png" alt="民国派">
+                        <br><span>民国派</span>
+                    </div>
+                    <div id="nvquan-show" class="col xl2 l2 m2 s2 no-padding hide">
+                        <img src="https://cdn.jsdelivr.net/gh/CNValues/cnvalues.github.io/img/nvquan.png" alt="女权主义">
+                        <br><span>女权主义</span>
+                    </div>
+                    <div id="suijing-show" class="col xl2 l2 m2 s2 no-padding hide">
+                        <img src="https://cdn.jsdelivr.net/gh/CNValues/cnvalues.github.io/img/suijing.png" alt="政治冷感">
+                        <br><span>政治冷感</span>
+                    </div>
+                    <div id="dengta-show" class="col xl2 l2 m2 s2 no-padding hide">
+                        <img src="https://cdn.jsdelivr.net/gh/CNValues/cnvalues.github.io/img/dengta.png" alt="全盘西化">
+                        <br><span>全盘西化</span>
+                    </div>
+                    <div id="nimin-show" class="col xl2 l2 m2 s2 no-padding hide">
+                        <img src="https://cdn.jsdelivr.net/gh/CNValues/cnvalues.github.io/img/nimin.png" alt="逆向民族主义">
+                        <br><span>逆向民族主义</span>
+                    </div>
+                    <div id="difang-show" class="col xl2 l2 m2 s2 no-padding hide">
+                        <img src="https://cdn.jsdelivr.net/gh/CNValues/cnvalues.github.io/img/difang.png" alt="地方主义">
+                        <br><span>地方主义</span>
+                    </div>
+                    <div id="sheda-show" class="col xl2 l2 m2 s2 no-padding hide">
+                        <img src="https://cdn.jsdelivr.net/gh/CNValues/cnvalues.github.io/img/sheda.png" alt="社会达尔文主义">
+                        <br><span>社会达尔文主义</span>
+                    </div>
+                    <div id="tese-show" class="col xl2 l2 m2 s2 no-padding hide">
+                        <img src="https://cdn.jsdelivr.net/gh/CNValues/cnvalues.github.io/img/tese.png" alt="中国特色社会主义">
+                        <br><span>中国特色社会主义</span>
+                    </div>
+                    <div id="haidao-show" class="col xl2 l2 m2 s2 no-padding hide">
+                        <img src="https://cdn.jsdelivr.net/gh/CNValues/cnvalues.github.io/img/haidao.png" alt="海盗党">
+                        <br><span>海盗党</span>
+                    </div>
+                    <div id="jiasu-show" class="col xl2 l2 m2 s2 no-padding hide">
+                        <img src="https://cdn.jsdelivr.net/gh/CNValues/cnvalues.github.io/img/jiasu.png" alt="加速主义">
+                        <br><span>加速主义</span>
+                    </div>
+                    <div id="shequn-show" class="col xl2 l2 m2 s2 no-padding hide">
+                        <img src="https://cdn.jsdelivr.net/gh/CNValues/cnvalues.github.io/img/shequn.png" alt="社群主义">
+                        <br><span>社群主义</span>
+                    </div>
+                </div>
+                <h5 class="center">
+                    <span style="font-size: smaller">最接近的意识形态</span>
+                    <br>
+                    <span id="ideology-label" style="font-size: larger"></span>
+                </h5>
+            </div>
+        </div>
+    </div>
+    <div class="col xl6 l6 m12 s12 equal-height-col">
+        <div class="card grey lighten-3 hoverable equal-height-inner">
+            <div class="card-content">
+                <p id="ideology-label2" class="card-title center"></p>
+                <p id="ideology-desc" class="flow-text" style="text-indent: 2em"></p>
+                <br>
+                <a id="ideology-link" class="flow-text" style="word-break: break-all"></a>
+                <br><br>
+                <p id="special-desc" style="font-size: large"></p>
+            </div>
+        </div>
+    </div>
+</main>
+
+<div class="fixed-action-btn">
+    <a class="btn-floating btn-large green tooltipped" data-position="left" data-tooltip="重新测试" href="quiz.html">
+        <i class="large material-icons">refresh</i>
+    </a>
+</div>
+
+</body>
+
+</html>
